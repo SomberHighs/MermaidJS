@@ -1,4 +1,4 @@
-# MermaidJSgraph TD
+graph TD
     subgraph Client Layer
         User[User / Client App] -->|POST /notify| API[FastAPI Entrypoint]
     end
@@ -30,3 +30,5 @@
     classDef infra fill:#bbf,stroke:#333,stroke-width:1px;
     class API,Svc,Tmpl,Q,Worker core;
     class EmailAdpt,SMSAdpt,SlackAdpt,Mailhog infra;
+# MermaidJSgraph 
+    
