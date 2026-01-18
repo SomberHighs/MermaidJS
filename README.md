@@ -25,7 +25,7 @@ graph TD
     end
 
     subgraph Async Workers
-        Worker[Celery/Arq Worker] -->|Fetch Job| Q
+        Worker["Celery/Arq Worker"] -->|Fetch Job| Q
         Worker -->|Process Logic| Router{Channel Router}
     end
 
@@ -36,7 +36,7 @@ graph TD
     end
 
     subgraph External Services
-        EmailAdpt -.->|SMTP| Mailhog[Mailhog (Dev) / SendGrid (Prod)]
+        EmailAdpt -.->|SMTP| Mailhog["Mailhog (Dev) / SendGrid (Prod)"]
         SMSAdpt -.->|HTTP| TwilioAPI[Twilio API]
         SlackAdpt -.->|HTTP| SlackAPI[Slack API]
     end
