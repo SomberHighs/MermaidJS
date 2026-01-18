@@ -1,12 +1,18 @@
+# Nexus-Notify
+
 ![Build Status](https://github.com/SomberHighs/MermaidJS/actions/workflows/main.yml/badge.svg)
-Quick Start (Docker)
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Hexagonal-orange.svg)
 
-Run docker-compose up -d
+**A fault-tolerant notification gateway built with Hexagonal Architecture.**
 
-Open http://localhost:8000/docs to trigger a test notification.
+Nexus-Notify acts as a decoupled abstraction layer between your microservices and notification providers (SendGrid, Twilio, Slack). It handles template rendering, provider failover, and rate limiting, allowing your business logic to remain agnostic of the delivery channel.
 
-Open http://localhost:8025 (MailHog) to see the email arrive instantly without configuring real credentials.
+## 🏗️ Architecture
+This project implements **Ports and Adapters (Hexagonal) Architecture** to ensure the core domain logic remains isolated from infrastructure concerns.
 
+```mermaid
 graph TD
     subgraph Client Layer
         User[User / Client App] -->|POST /notify| API[FastAPI Entrypoint]
@@ -39,5 +45,3 @@ graph TD
     classDef infra fill:#bbf,stroke:#333,stroke-width:1px;
     class API,Svc,Tmpl,Q,Worker core;
     class EmailAdpt,SMSAdpt,SlackAdpt,Mailhog infra;
-# MermaidJSgraph 
-    
