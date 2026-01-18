@@ -1,3 +1,4 @@
+![Build Status](https://github.com/SomberHighs/MermaidJS/actions/workflows/main.yml/badge.svg)
 Quick Start (Docker)
 
 Run docker-compose up -d
