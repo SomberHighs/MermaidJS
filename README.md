@@ -1,3 +1,11 @@
+Quick Start (Docker)
+
+Run docker-compose up -d
+
+Open http://localhost:8000/docs to trigger a test notification.
+
+Open http://localhost:8025 (MailHog) to see the email arrive instantly without configuring real credentials.
+
 graph TD
     subgraph Client Layer
         User[User / Client App] -->|POST /notify| API[FastAPI Entrypoint]
